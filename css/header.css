@@ -1,0 +1,221 @@
+[class*="__container"]{
+    max-width: 1087px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+/* .header:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    z-index: 1;
+    background-color: #fff;
+} */
+
+.header__container{
+    display: flex;
+    min-height: 7.125rem;
+    align-items: center;
+} 
+
+.header__menu{
+    flex: 1 1 auto;
+    overflow: auto;
+    padding-right: 3.4375rem;
+} 
+
+.menu{
+    display: flex;
+    justify-content: flex-end;
+} 
+
+.menu__item{
+    display: flex;
+    gap: 2.5rem;
+} 
+
+.menu__link{
+    color: #000;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 0.625rem;
+    letter-spacing: 1.4px;
+    transition: all 0.2s ease-in-out;
+} 
+.menu__link:hover{
+    color: #4285F4;
+}
+
+.header__button{
+    flex: 0 0 15.625rem;
+    display: flex;
+    justify-content: flex-end;
+} 
+.button{
+    display: inline-block;
+    font-family: Raleway;
+    text-transform: uppercase;
+    color: #FCFDFE;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    padding: 0.875rem 1.875rem;
+    border-radius: 5px;
+    background: #EC5863;
+    transition: all 0.3s ease 0s ;
+}
+.button:hover{
+    background-color: #fa9191;
+    transform: scale(1.02);
+}
+
+.button_blue{
+    background-color: #4285F4;
+} 
+.button_blue:hover{
+    background-color:#7da8ec;
+}
+.header__burger{
+    display: none;
+}
+/* PC */
+@media (max-width: 1087px ) {
+    [class*="__container"]{
+        max-width: 970px;
+    }
+}
+/* TABLET */
+@media (max-width: 991.98px ) {
+    [class*="__container"]{
+        max-width: 750px;
+    }
+    .header__button{
+        flex: 0 0 10.625rem;
+    }
+    .menu__item{
+        gap: 1.875rem;
+    } 
+    .header__container{
+        min-height: 5.0625rem;
+    } 
+}
+/* MOBILE */
+@media (max-width: 767.98px ) {
+    body.lock{
+        overflow: hidden;
+    }
+    [class*="__container"]{
+        max-width: none;
+    }
+    .header__logo{
+        /* flex: 0 0 40px;
+        overflow: hidden; */
+        z-index: 70;
+    }
+    .header__burger{
+        display: block;
+        position: absolute;
+        width: 1.875rem;
+        height: 1.25rem;
+        top: 1.875rem;
+        right: 1.875rem;
+        /* transition: all 0.3s ease-in-out; */
+    }
+    .header__burger>span{
+        /* display: block; */
+        position: absolute;
+        background-color: #000000;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .header__burger:before,
+    .header__burger:after{
+        content: '';
+        background-color:#000;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    .header__burger:before{
+        top: 0;
+    }
+    .header__burger:after{
+        bottom: 0;
+    }
+    .header__menu{
+        left: -100%;
+        position: fixed;
+        /* top: 0; */
+        top: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(20px);
+        padding-top: 140px;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu__item{
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
+    .menu__link{
+        font-size: 1.875rem;
+        text-align: center;
+    }
+    .header__button{
+        position: absolute;
+        right: 100px;
+    }
+    .header__burger.active:before{
+        transform: rotate(45deg);
+        top: 0.5625rem;
+    }
+    .header__burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 0.5625rem;
+    }
+    .header__burger.active>span{
+        transform: scale(0);
+    }
+    .header__menu.active{
+        left: 0;
+    }
+    .header__menu.active .menu__list{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+/* MOBILE SMALL */
+@media (max-width:479.98px){
+    [class*="__container"]{
+        max-width: none;
+    }
+    .header__logo{
+        flex: 0 0 40px;
+        overflow: hidden;
+        z-index: 70;
+    }
+}
