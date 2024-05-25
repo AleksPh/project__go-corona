@@ -1,0 +1,12 @@
+.diagram{
+  background: #FAFBFD;
+}
+.diagram__container{
+  padding: 90px 15px 40px 15px ;
+  /* background: #FAFBFD; */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#covidChart{
+  padding: 30px;
+}
